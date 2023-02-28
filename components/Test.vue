@@ -168,7 +168,7 @@ export default {
         maximumAge: 0,
       };
       const success = (pos) => {
-        const crd = pos.coords;
+        const crd = pos.cords;
         /// console.log("Your current position is:");
         // console.log(`Latitude : ${crd.latitude}`);
         //  console.log(`Longitude: ${crd.longitude}`);
