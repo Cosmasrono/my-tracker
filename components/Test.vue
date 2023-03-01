@@ -6,7 +6,7 @@
         v-show="load"
       >
         <nuxt-link
-          to="/Maps"
+          to="/Map"
           class="flex items-center gap-2 bg-blue-600 rounded px-3 py-2"
         >
           <span class="text-white">Maps.</span>
@@ -80,9 +80,8 @@ export default {
   data() {
     return {
       client: createClient(
-        "https://btozlwgodrieiivvilno.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0b3psd2dvZHJpZWlpdnZpbG5vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjkzNzQ2NDksImV4cCI6MTk4NDk1MDY0OX0.mCLYF2ZKas2hOfAUapacMUqysLPLgKfz3tRp99MrIYg"
-      ),
+        "https://swocaqwllmwkocyhqnhm.supabase.co",
+       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3b2NhcXdsbG13a29jeWhxbmhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzExNzM2NDIsImV4cCI6MTk4Njc0OTY0Mn0.eE7E7QeAT2iGCsInhiPVjYqOEuyrfD0-OAKsKhuWVaI'      ),
       latitude: null,
       name: "",
       longitude: null,
