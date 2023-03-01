@@ -35,10 +35,5 @@
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
-* {
-  font-family: "Quantico", sans-serif;
-  transition: all 0.2s ease-in-out;
-  scroll-behavior: smooth;
-}
+
 </style>

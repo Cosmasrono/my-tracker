@@ -1,5 +1,5 @@
 <template>
-    <main class="">
+    <main class=" bg-cyan-400">
         <div class="">
         <signup/>
             

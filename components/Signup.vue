@@ -1,18 +1,10 @@
 <template>
   <main>
-    <!--
-      This component uses @tailwindcss/forms
     
-      yarn add @tailwindcss/forms
-      npm install @tailwindcss/forms
-    
-      plugins: [require('@tailwindcss/forms')]
-    -->
-
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-lg">
         <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-          Start Tracking your Buddy!
+          Start tracking your buddy 
         </h1>
 
         <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
@@ -60,7 +52,7 @@
                 placeholder="Enter email"
               />
 
-              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+             <!--  <span class="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-gray-400"
@@ -75,7 +67,7 @@
                     d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
                   />
                 </svg>
-              </span>
+              </span> -->
             </div>
           </div>
           <div>
@@ -90,7 +82,7 @@
                 placeholder="Enter password"
               />
 
-              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+            <!--   <span class="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-gray-400"
@@ -111,7 +103,7 @@
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
-              </span>
+              </span> -->
             </div>
           </div>
 
@@ -129,7 +121,7 @@
                 placeholder="Confirm password"
               />
 
-              <span class="absolute inset-y-0 right-4 inline-flex items-center">
+             <!--  <span class="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-gray-400"
@@ -150,7 +142,7 @@
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
-              </span>
+              </span> -->
             </div>
           </div>
 
@@ -168,9 +160,7 @@
             <NuxtLink to="/Login" class="underline">Sign In</NuxtLink>
           </p>
         </form>
-        <div class="flex justify-center items-center text-black">
-          <span class="text-lg text-black">Made with ❤️ by Francis_pro</span>
-        </div>
+        
       </div>
     </div>
   </main>

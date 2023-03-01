@@ -38,6 +38,7 @@ import GeoMap from "./GeoMap.vue";
             const latestLongitude = data[0]?.longitude;
             this.latitude = latestLatitude ? latestLatitude : -0.1682460856470205 ;
             this.longitude = latestLongitude ? latestLongitude : 35.966044867768524 ;
+            console.log(data);
             console.log("Latest location:", latestLatitude, latestLongitude);
           })
           .catch((error) => {

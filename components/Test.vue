@@ -9,7 +9,7 @@
           to="/Map"
           class="flex items-center gap-2 bg-blue-600 rounded px-3 py-2"
         >
-          <span class="text-white">Maps.</span>
+          <span class="text-white">View Map</span>
         </nuxt-link>
         <button
           class="flex items-center gap-2 bg-blue-600 rounded px-3 py-2 text-white"
@@ -54,13 +54,13 @@
       v-else
     >
       <span class="text-lg text-black" v-show="user">Hi {{ email }}!</span>
-      <span class="">
+    <!--   <span class="">
         <img
           src="https://cdn.pixabay.com/photo/2018/07/30/15/00/carpenter-3572804__340.png"
           alt=""
           class=""
-        />
-      </span>
+        /> 
+      </span>-->
       <span class="text-lg text-black"
         >Please Allow Location Access on your device!
       </span>
@@ -75,6 +75,7 @@
 //import L from "leaflet";
 import { createClient } from "@supabase/supabase-js";
 import currentPlace from "./currentPlace.vue";
+import Loader from "./Loader.vue";
 
 export default {
   data() {
@@ -87,6 +88,8 @@ export default {
       longitude: null,
       err: null,
       success: null,
+      city: "",
+      location: "",
       user: null,
       signing: true,
       load: false,
@@ -96,6 +99,7 @@ export default {
   },
   components: {
     currentPlace,
+    Loader,
   },
 
   methods: { 
@@ -118,19 +122,19 @@ export default {
       }
     },
 
-    async listenForLocationChanges() {
-      /* subscribe to new locations thro channel changes from supabase */
-      const subs = this.client
-        .channel("locations")
-        .on(
-          "postgres_changes",
-          { event: "INSERT", schema: "public", table: "locations" },
-          (payload) => {
-            console.log("Change received!", payload);
-          }
-        )
-        .subscribe();
-    },
+    // async listenForLocationChanges() {
+    //   /* subscribe to new locations thro channel changes from supabase */
+    //   const subs = this.client
+    //     .channel("locations")
+    //     .on(
+    //       "postgres_changes",
+    //       { event: "INSERT", schema: "public", table: "locations" },
+    //       (payload) => {
+    //         console.log("Change received!", payload);
+    //       }
+    //     )
+    //     .subscribe();
+    // },
 
     getCurrentPosition() {
       navigator.geolocation.getCurrentPosition(
@@ -173,8 +177,11 @@ export default {
         //  console.log(`Longitude: ${crd.longitude}`);
         // console.log(`More or less ${crd.accuracy} meters.`);
         //console.log(crd);
-        this.latitude = crd.latitude;
-        this.longitude = crd.longitude;
+        const { latitude, longitude,city } = pos.coords;
+        this.latitude = latitude;
+        this.longitude = longitude;
+       
+       console.log(`Latitude : ${this.latitude} Longitude: ${this.longitude}`);
         /* insert new locations(latitude and longitude) to supabase */
         this.client
           .from("locations")
@@ -199,6 +206,7 @@ export default {
     this.getUser();
     this.watchCurrentPosition();
     this.getCurrentPosition();
+   
     setTimeout(() => {
       this.load = true;
     }, 5000);

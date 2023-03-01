@@ -6,6 +6,7 @@
   </template>
   
   <script>
+  
  
 import Cords from "../components/Cords.vue";  
   export default {
